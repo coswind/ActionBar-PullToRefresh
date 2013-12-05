@@ -1,0 +1,17 @@
+apply plugin: 'maven'
+
+group = 'com.github.chrisbanes.actionbarpulltorefresh'
+
+artifacts {
+	archives file('extras/actionbarsherlock/build/libs/extras/actionbarsherlock-0.9.2.aar')
+}
+
+uploadArchives {
+	repositories {
+		mavenDeployer {
+			repository(url: "file:///home/coswind/Android/gitrepo/mvn-repo")
+			pom.version  = '0.9.2'
+			pom.artifactId = 'extra-abs'
+		}
+	}
+}

@@ -53,16 +53,16 @@ public class PullToRefreshProgressBar extends View implements
     private final AnimationRunnable mIndeterminateAnimator;
     private final Paint mPaint = new Paint();
 
-    private final int mIndeterminateBarSpacing;
-    private final float mDensity;
-    private int mSegmentCount;
+    protected final int mIndeterminateBarSpacing;
+    protected final float mDensity;
+    protected int mSegmentCount;
 
-    private boolean mIndeterminate;
-    private int mProgress;
-    private int mProgressMax;
+    protected boolean mIndeterminate;
+    protected int mProgress;
+    protected int mProgressMax;
 
-    private int mProgressBarColor;
-    private float mProgressBarRadiusPx;
+    protected int mProgressBarColor;
+    protected float mProgressBarRadiusPx;
 
     private final RectF mDrawRect = new RectF();
 
@@ -117,7 +117,7 @@ public class PullToRefreshProgressBar extends View implements
         return mProgressMax;
     }
 
-    void drawProgress(Canvas canvas) {
+    protected void drawProgress(Canvas canvas) {
         mPaint.setColor(mProgressBarColor);
 
         final float progress = Math.max(Math.min(mProgress / (float) mProgressMax, 1f), 0f);
@@ -128,7 +128,7 @@ public class PullToRefreshProgressBar extends View implements
         canvas.drawRoundRect(mDrawRect, mProgressBarRadiusPx, mProgressBarRadiusPx, mPaint);
     }
 
-    void drawIndeterminate(Canvas canvas) {
+    protected void drawIndeterminate(Canvas canvas) {
         if (!mIndeterminateAnimator.isStarted()) {
             return;
         }
@@ -203,7 +203,7 @@ public class PullToRefreshProgressBar extends View implements
         }
     }
 
-    void setProgressState(int progress, int progressMax, boolean indeterminate) {
+    protected void setProgressState(int progress, int progressMax, boolean indeterminate) {
         boolean invalidate = false;
 
         if (mIndeterminate != indeterminate) {
