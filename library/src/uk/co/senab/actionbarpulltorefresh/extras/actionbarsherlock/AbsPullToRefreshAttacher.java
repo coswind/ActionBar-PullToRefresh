@@ -32,9 +32,9 @@ import android.widget.FrameLayout;
 import uk.co.senab.actionbarpulltorefresh.library.EnvironmentDelegate;
 import uk.co.senab.actionbarpulltorefresh.library.HeaderTransformer;
 import uk.co.senab.actionbarpulltorefresh.library.Options;
+import uk.co.senab.actionbarpulltorefresh.library.PullToRefreshAttacher;
 
-class AbsPullToRefreshAttacher extends
-        uk.co.senab.actionbarpulltorefresh.library.PullToRefreshAttacher {
+class AbsPullToRefreshAttacher extends PullToRefreshAttacher {
 
     private FrameLayout mHeaderViewWrapper;
 

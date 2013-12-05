@@ -13,3 +13,15 @@ android {
     }
 }
 
+repositories {
+    maven {
+        url 'https://github.com/coswind/mvn-repo/raw/master/'
+    }
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:18.0.+'
+    compile 'com.actionbarsherlock:actionbarsherlock:4.4.0@aar'
+}
+
