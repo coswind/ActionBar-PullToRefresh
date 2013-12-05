@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package uk.co.senab.actionbarpulltorefresh.extras.actionbarcompat;
+package uk.co.senab.actionbarpulltorefresh.extras.actionbarsherlock;
 
 import android.app.Activity;
 import android.content.Context;
@@ -22,28 +22,28 @@ import android.util.AttributeSet;
 
 import uk.co.senab.actionbarpulltorefresh.library.Options;
 import uk.co.senab.actionbarpulltorefresh.library.PullToRefreshAttacher;
+import uk.co.senab.actionbarpulltorefresh.library.PullToRefreshLayout;
 
 /**
  * @see uk.co.senab.actionbarpulltorefresh.library.PullToRefreshLayout
  */
-public class PullToRefreshLayout extends
-        uk.co.senab.actionbarpulltorefresh.library.PullToRefreshLayout {
+public class AbsPullToRefreshLayout extends PullToRefreshLayout {
 
-    public PullToRefreshLayout(Context context) {
+    public AbsPullToRefreshLayout(Context context) {
         super(context);
     }
 
-    public PullToRefreshLayout(Context context, AttributeSet attrs) {
+    public AbsPullToRefreshLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public PullToRefreshLayout(Context context, AttributeSet attrs, int defStyle) {
+    public AbsPullToRefreshLayout(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
 
     @Override
     protected PullToRefreshAttacher createPullToRefreshAttacher(Activity activity,
             Options options) {
-        return new AbcPullToRefreshAttacher(activity, options);
+        return new AbsPullToRefreshAttacher(activity, options);
     }
 }
