@@ -1,17 +1,18 @@
 apply plugin: 'maven'
 
-group = 'com.github.chrisbanes.actionbarpulltorefresh'
+version = VERSION_NAME
+group = GROUP
 
 artifacts {
-	archives file('library/build/libs/library-0.9.2.aar')
+	archives file(ARCHIVE_PATH + ARTIFACT_ID + "-" + VERSION_NAME + ".aar")
 }
 
 uploadArchives {
 	repositories {
 		mavenDeployer {
-			repository(url: "file:///home/coswind/Android/gitrepo/mvn-repo")
-			pom.version  = '0.9.2'
-			pom.artifactId = 'library'
+			repository(url: LOCAL_REPO_URL)
+			pom.version  = version
+			pom.artifactId = ARTIFACT_ID
 		}
 	}
 }
