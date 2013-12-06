@@ -17,6 +17,9 @@ allprojects {
     group = GROUP
 
     repositories {
+        maven {
+            url 'https://github.com/coswind/mvn-repo/raw/master/'
+        }
         mavenCentral()
     }
 }
