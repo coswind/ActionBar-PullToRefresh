@@ -23,7 +23,7 @@ import android.view.animation.LinearInterpolator;
 
 import uk.co.senab.actionbarpulltorefresh.library.sdk.Compat;
 
-class AnimationRunnable implements Runnable {
+public class AnimationRunnable implements Runnable {
 
     static interface AnimatorUpdateListener {
         /**
